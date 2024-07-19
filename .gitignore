@@ -34,3 +34,6 @@ loadLog.txt
 __pycache__
 
 *.wep
+
+/dist/
+main.spec

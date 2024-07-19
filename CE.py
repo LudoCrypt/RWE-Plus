@@ -81,7 +81,7 @@ class CE(MenuWithField):
                     qlist = [rect.topleft, rect.topright, rect.bottomright, rect.bottomleft]
                     mouse = pg.Vector2(self.mousepos) - qlist[quadindx]
                     r, o = mouse.rotate(90).as_polar()
-                    self.changedata(["CM", "quads", self.heldindex, quadindx], [round(o, 4), round(min(r / 100 / self.size * image1size, 1), 4)])
+                    self.changedata(["CM", "quads", self.heldindex, quadindx], [round(o, 4), round(min(r / 100 / self.size * image1size, 4), 4)])
                     # self.data["CM", "quads", self.heldindex, quadindx] = [round(o, 4), round(min(r / 100 / self.size * image1size, 1), 4)]
 
             elif bp[0] == 0 and not self.mousp and (self.mousp2 and self.mousp1):
@@ -201,7 +201,7 @@ class CE(MenuWithField):
             cam = self.closestcameraindex()
             quadindx = self.getquad(cam)
             self.changedata(["CM", "quads", cam, quadindx, 1],
-                            round(min(self.data["CM"]["quads"][cam][quadindx][1] + globalsettings["CEaddspeed"], 1), 4))
+                            round(min(self.data["CM"]["quads"][cam][quadindx][1] + globalsettings["CEaddspeed"], 4), 4))
 
     def adddown(self):  # ddddddddddd
         if not self.held:
